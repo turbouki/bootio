@@ -1,0 +1,24 @@
+spring-boot-starter-jdbc vs spring-boot-starter-data-jdbc
+https://www.holaxprogramming.com/2015/10/16/spring-boot-with-jdbc/
+Just Spring Data Access
+https://resources.oreilly.com/examples/0636920025405
+
+//spring boot에서 jsp 사용하기
+1.library 설정
+   -dependency 설정
+   **groupId:artifactId
+   1.build.gradle
+   2.maven
+2.뷰설정
+ application.properties에 정의
+3.폴더설정
+ webpplication 폴더 구조 생성
+ src/webapp/web-inf/views
+
+
+
+ application.properties
+ datasource
+ view
+
+
