@@ -12,10 +12,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public final class TestPrimaryKey implements Serializable {
-
-
     @Column(name = "id")
     private String id;
-
-
 }

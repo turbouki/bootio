@@ -7,12 +7,14 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 @Slf4j
-@RestController
+@RestController // @Controller + @ResponseBody
 public class PostController {
+    // JSON object를 그래도 받고 싶을때는 @RequestBody를 사용합니다.
     @PostMapping("/group")
     public GroupDto post(@RequestBody GroupDto groupDto) {
         log.debug(":: POST ================");

@@ -8,9 +8,15 @@ https://resources.oreilly.com/examples/0636920025405
    -dependency 설정
    **groupId:artifactId
    1.build.gradle
+       // jsp 엔진 설정  groupId:artifactId
+       implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+       implementation 'javax.servlet:jstl'
+       implementation group: 'org.apache.taglibs', name: 'taglibs-standard-impl', version: '1.2.5'
    2.maven
 2.뷰설정
  application.properties에 정의
+   spring.mvc.view.prefix=/WEB-INF/views/
+   spring.mvc.view.suffix=.jsp
 3.폴더설정
  webpplication 폴더 구조 생성
  src/webapp/web-inf/views

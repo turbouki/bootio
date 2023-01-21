@@ -7,6 +7,7 @@ import com.example.bootio.app.service.RetailService;
 import com.example.bootio.app.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -53,8 +54,8 @@ public class DataController {
 
     // JDBC connection programming
     @ResponseBody
-    @RequestMapping(path = "retails.json", method = RequestMethod.GET, produces = "application/json; charset=UTF-8" )
-    public List<?> test2() {
+    @RequestMapping(path = "retails.json", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE ) //produces = "application/json; charset=UTF-8"
+    public List<?> jdbcTest() {
         LocalDate date = LocalDate.now();
         System.out.println(date);
         return dataService.findAll(date);
@@ -63,7 +64,7 @@ public class DataController {
     // JPA with Entity
     @ResponseBody
     @RequestMapping(path = "users.json", method = RequestMethod.GET, produces = "application/json; charset=UTF-8" )
-    public List<Usr> test3() {
+    public List<Usr> jpaEntityTest() {
         LocalDate date = LocalDate.now();
         System.out.println(date);
         return todoService.findAll();
@@ -72,7 +73,7 @@ public class DataController {
     // JPA with Native query
     @ResponseBody
     @RequestMapping(path = "sales.json", method = RequestMethod.GET, produces = "application/json; charset=UTF-8" )
-    public List<RetailInterface> test4() {
+    public List<RetailInterface> jpaNativeQueryTest() {
         LocalDate date = LocalDate.now();
         System.out.println(date);
         return retailService.findAll(date);
