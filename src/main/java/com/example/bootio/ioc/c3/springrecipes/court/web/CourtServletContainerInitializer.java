@@ -18,6 +18,7 @@ public class CourtServletContainerInitializer implements ServletContainerInitial
                 new AnnotationConfigWebApplicationContext();
         applicationContext.register(CourtConfiguration.class);
 
+        System.out.println("OnStartup :: OnStartup :: OnStartup :: ");
         DispatcherServlet dispatcherServlet = new DispatcherServlet(applicationContext);
         ServletRegistration.Dynamic courtRegistration = ctx.addServlet("court", dispatcherServlet);
         courtRegistration.setLoadOnStartup(1);
